@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Product List</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <nav>
+          <h1>Product List</h1>
+          <div>
+            <a href="addproduct.php">
+              <button class="button">ADD</button>
+            </a>
+            <button type="submit" form="delete" name="delete-product-btn" class="mass-delete-button" id="delete-product-btn" >MASS DELETE</button>
+          </div>
+        </nav>
+        <hr />
+      </header>
+      <main>
+        <form id="delete" action="productlist.php" method="post">
+        <?php
+      if(isset($allProducts)){
+
+        foreach($allProducts as $product){
+        $id = $product->getId();
+        $sku = $product->getSKU();
+        $name = $product->getName();
+        $price = $product->getPrice();
+        $description = $product->Measurements;
+
+        ?>
+
+                <div class="content">
+                  <input id="delete-checkbox" class="delete-checkbox" type="checkbox" name="checkbox[]" value= " <?php echo $id; ?>" />
+                  <?php echo $sku."</br>";
+                        echo $name."</br>";
+                        echo $price.'$'."</br>";
+                        echo $description."</br>";
+                  ?>
+
+
+                </div>
+       <?php }} ?>
+
+        </form>
+      </main>
+      <footer>
+        <hr />
+        <h3>Scandiweb Test assignment</h3>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Product Add</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <nav>
+          <h1>Product Add</h1>
+          <div>
+            <button type="submit" form="product_form" class="save-button">Save</button>
+            <button class="button" onclick="window.location='productlist.php'">Cancel</button>
+          </div>
+        </nav>
+        <hr />
+      </header>
+      <!--      <?php if(strlen($error)>0) { ?>-->
+      <!--      <div >-->
+      <!--        <p> <?php echo $error;  ?></p>-->
+
+      <!--      </div>-->
+      <!--      <?php } ?>-->
+      <form id="product_form" action="addproduct.php" method="post">
+        <div>
+          <!-- check leh hya divat -->
+          <label for="sku">SKU</label>
+          <input id="sku" type="text" name="SKU" required oninvalid="this.setCustomValidity('Please, submit required data')" oninput="this.setCustomValidity('')"/><br />
+        </div>
+        <div>
+          <label for="name">Name</label>
+          <input id="name" type="text" name="name" required oninvalid="this.setCustomValidity('Please, submit required data')" oninput="this.setCustomValidity('')"/><br />
+        </div>
+        <div>
+          <label for="price">Price ($)</label>
+          <input id="price" type="number" name="price" min="0" required oninvalid="this.setCustomValidity('Please, submit required data')" oninput="this.setCustomValidity('')"/>
+        </div>
+
+        <br />
+
+
+        <!-- probably delete -->
+
+<!--        <label for="Type_Switcher">Type Switcher</label>-->
+
+
+        <select name="select" id="Type_Switcher" >
+            <option hidden >Type Switcher</option>
+            <option id="DVD" value="dvd">DVD-disk</option>
+            <option id="Furniture" value="furniture">Book</option>
+            <option id="Book" value="book">Furniture</option>
+        </select>
+        <div class="resp">
+
+        </div>
+        <div class="error">
+
+        </div>
+      </form>
+      <footer>
+        <hr />
+        <h3>Scandiweb Test assignment</h3>
+      </footer>
+    </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+
+  <script>
+    $(document).ready(function (){
+      $('#Type_Switcher').change(function (){
+        var option = $('#Type_Switcher').val();
+        $.ajax({
+          url: "classes.php",
+          type: "POST",
+          data: {Type_Switcher:option},
+          success: function (response){
+            $('.resp').html(response);
+          }
+
+        });
+      });
+    });
+
+    // $(document).ready(function (){
+    //   $('#Type_Switcher').change(function (){
+    //     var option = $('#Type_Switcher').val();
+    //     $.ajax({
+    //       url: "ajaxtask.php",
+    //       type: "POST",
+    //       data: {Type_Switcher:option},
+    //       success: function (response){
+    //         $('.resp').html(response);
+    //       }
+    //
+    //     });
+    //   });
+    // });
+
+
+  </script>
+  </body>
+</html>

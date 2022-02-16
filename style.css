@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+/* .page-container {
+  position: relative;
+} */
+
+.wrapper {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+body {
+  margin: 0 8em;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1.5em 0;
+}
+
+h1 {
+  font-size: 2em;
+}
+button {
+  padding: 0.25em;
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+
+.mass-delete-button {
+  /*   3'yro l id LAZM asdsadsafsfdngfgsafdsghfjgfdsasasdfghjkhfdfdffjgkhfdsgdhfjgkjfgf */
+  background-color: rgb(228, 55, 55);
+  color: white;
+}
+
+.mass-delete-button:hover {
+  background-color: rgb(197, 30, 30);
+}
+
+hr {
+  /* margin: 5px auto; */
+  border-width: 0.25px;
+}
+
+#delete {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* grid-template-rows: auto auto auto; */
+  /* height: 650px; */
+  margin: 1.25em 0;
+  gap: 2em 5em;
+   /*align-items: center; */
+
+  /* margin: 0 auto; */
+  /* width: 100%; */
+}
+
+
+.content {
+  /* background-color: lightgreen; */
+  border: solid;
+  height: 150px;
+  /* width: 200px; */
+  /* margin: 0 auto; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+.delete-checkbox {
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  cursor: pointer;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3.5em;
+  /* height: 75px; */
+}
+
+/* footer {
+  position: absolute;
+  bottom: 0;
+} */
+
+/* PAGE 2 */
+.save-button {
+  background-color: rgb(17 89 251);
+  color: white;
+}
+
+.save-button:hover {
+  background-color: rgb(13, 72, 209);
+}
+
+#product_form {
+  /* display: grid; */
+  /* width: 1rem; */
+  margin: 1em 0;
+}
+
+label {
+  width: 7em;
+  margin: 1em 0;
+  display: inline-block;
+}
+
+input {
+  padding: 0.2em;
+  /* border-radius: 4px; */
+}
+
+select {
+  padding: 8px 11px;
+  border-radius: 4px;
+  background-color: #f1f1f1;
+}
+
+optgroup label {
+  color: violet;
+}
