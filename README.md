@@ -12,14 +12,6 @@ This repository contains an e-commerce application to add and delete products, u
     ```bash
     git clone https://github.com/Mazen-Mohamed14/E-commerce-app
     ```
-2. Navigate to the project directory:
-    ```bash
-    cd Weather-Web-App
-    ```
-3. Install dependencies using npm:
-    ```bash
-    yarn
-    ```
 
 ### Running the Application
 To run the application locally, use the following steps:
